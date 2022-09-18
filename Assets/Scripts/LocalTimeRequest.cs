@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 public class LocalTimeRequest : MonoBehaviour
 {
-    string url = "http://worldtimeapi.org/api/timezone/Europe/Paris";
+    public string url = "http://worldtimeapi.org/api/timezone/Europe/Paris";
     public GameObject timeTextObject;
     void Start()
     {

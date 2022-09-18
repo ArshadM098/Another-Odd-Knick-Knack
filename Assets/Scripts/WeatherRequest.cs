@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 
 public class WeatherRequest : MonoBehaviour
 {
-    string url = "https://api.openweathermap.org/data/2.5/weather?lat=48.8534&lon=2.3488&appid=a93b0c11404d077c9140f5f9bdf16892";
+    public string url = "https://api.openweathermap.org/data/2.5/weather?lat=48.8534&lon=2.3488&appid=a93b0c11404d077c9140f5f9bdf16892";
     public GameObject WeatherTextObject;
     void Start()
     {
