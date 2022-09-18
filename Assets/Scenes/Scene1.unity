@@ -2858,6 +2858,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: akai_e_espiritu@Hanging Idle
       objectReference: {fileID: 0}
+    - target: {fileID: 1048793309308852666, guid: f156ef845f0805148899c5b6fad54100, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f035e7dcc2ebfd498d8829c0a29a4ca, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f156ef845f0805148899c5b6fad54100, type: 3}
 --- !u!1 &890797944
