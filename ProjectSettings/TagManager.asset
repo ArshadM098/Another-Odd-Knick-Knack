@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Lighting
+  - C1_Lighting
+  - C1_Daytime
+  - C2_Lighting
+  - C2_Daytime
   layers:
   - Default
   - TransparentFX

@@ -2,17 +2,17 @@
 <QCARConfig>
     <Tracking>
         <ImageTarget name="inClassCube.Bottom" size="1.000000 1.000000"/>
+        <ImageTarget name="inClassCube.Left" size="1.000000 1.000000"/>
         <ImageTarget name="inClassCube.Back" size="1.000000 1.000000"/>
-        <ImageTarget name="inClassCube.Front" size="1.000000 1.000000"/>
         <ImageTarget name="inClassCube.Right" size="1.000000 1.000000"/>
         <ImageTarget name="inClassCube.Top" size="1.000000 1.000000"/>
-        <ImageTarget name="inClassCube.Left" size="1.000000 1.000000"/>
+        <ImageTarget name="inClassCube.Front" size="1.000000 1.000000"/>
         <ImageTarget name="mCube.Bottom" size="1.000000 1.000000"/>
+        <ImageTarget name="mCube.Left" size="1.000000 1.000000"/>
         <ImageTarget name="mCube.Back" size="1.000000 1.000000"/>
-        <ImageTarget name="mCube.Front" size="1.000000 1.000000"/>
         <ImageTarget name="mCube.Right" size="1.000000 1.000000"/>
         <ImageTarget name="mCube.Top" size="1.000000 1.000000"/>
-        <ImageTarget name="mCube.Left" size="1.000000 1.000000"/>
+        <ImageTarget name="mCube.Front" size="1.000000 1.000000"/>
         <MultiTarget name="inClassCube">
             <Part name="inClassCube.Left" translation="-0.5 0 0" rotation="AD: 0 1 0 -90"/>
             <Part name="inClassCube.Right" translation="0.5 0 0" rotation="AD: 0 1 0 90"/>

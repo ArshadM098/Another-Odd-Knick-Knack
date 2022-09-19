@@ -7,10 +7,23 @@ using UnityEngine.Networking;
 
 public class WeatherRequest : MonoBehaviour
 {
-    public string url = "https://api.openweathermap.org/data/2.5/weather?lat=48.8534&lon=2.3488&appid=a93b0c11404d077c9140f5f9bdf16892";
+    public string lat;
+    public string lon;
+    public string API_key = "a93b0c11404d077c9140f5f9bdf16892";
+    private string url;
     public GameObject WeatherTextObject;
+    public GameObject TemperatureObject;
+    public bool celsius = false;
+    private string units;
     void Start()
     {
+        if (celsius == false) {
+            units = "imperial";
+        }
+        else if(celsius == true) {
+            units = "metric";
+        }
+        url = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + API_key+"&units="+ units;
         InvokeRepeating("GetDataFromWeb", 2f, 1f);
     }
 
@@ -30,21 +43,19 @@ public class WeatherRequest : MonoBehaviour
             yield return webRequest.SendWebRequest();
             string rawJson = webRequest.downloadHandler.text;
             WeatherClass weatherInfo = JsonUtility.FromJson<WeatherClass>(rawJson);
+            
             switch (webRequest.result)
             {
-                case UnityWebRequest.Result.ConnectionError:
-                case UnityWebRequest.Result.DataProcessingError:
-                    Debug.LogError(": Error: " + webRequest.error);
-                    break;
-                case UnityWebRequest.Result.ProtocolError:
-                    Debug.LogError(": HTTP Error: " + webRequest.error);
-                    break;
                 case UnityWebRequest.Result.Success:
-                    WeatherTextObject.GetComponent<TextMeshPro>().text = (weatherInfo.main.temp - 273).ToString() + " C";
-                    Debug.Log(weatherInfo.main.temp);
+                    TemperatureObject.GetComponent<TextMeshPro>().text = weatherInfo.main.temp.ToString("0.#") + " C";
+                    WeatherTextObject.GetComponent<TextMeshPro>().text = weatherInfo.weather[0].description.ToUpper();
+                    break;
+                default:
+                    Debug.LogError(": Error: " + webRequest.error);
                     break;
             }
         }
+    
     }
 }
 
@@ -52,7 +63,7 @@ public class WeatherRequest : MonoBehaviour
 public class WeatherClass
 {
     public Coord coord;
-    public Weather weather;
+    public Weather[] weather;
     public Main main;
     public string @base;
     public string visibility;
